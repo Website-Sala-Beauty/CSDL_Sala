@@ -43,6 +43,7 @@ public class cls_TaoBill
                 insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
                 insertCT.hoadonchitiet_soluong = 1;
                 insertCT.hoadonchitiet_thanhtien = insertCT.hoadonchitiet_dongia * insertCT.hoadonchitiet_soluong;
+                insert.rowguid = System.Guid.NewGuid();
                 db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
                 db.SubmitChanges();
                 return true;
@@ -59,6 +60,7 @@ public class cls_TaoBill
             insert.hoadon_hidden = "Tạo đặt lịch";
             insert.hoadontam_LoaiThanhToan = "Đặt lịch";
             insert.hoadon_tinhtrang = "Order";
+            insert.rowguid = System.Guid.NewGuid();
             db.tb_HoaDons.InsertOnSubmit(insert);
             db.SubmitChanges();
             tb_HoaDonChiTiet insertCT = new tb_HoaDonChiTiet();
@@ -67,6 +69,7 @@ public class cls_TaoBill
             insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
             insertCT.hoadonchitiet_soluong = 1;
             insertCT.hoadonchitiet_thanhtien = insertCT.hoadonchitiet_dongia * insertCT.hoadonchitiet_soluong;
+            insert.rowguid = System.Guid.NewGuid();
             db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
             db.SubmitChanges();
             return true;
