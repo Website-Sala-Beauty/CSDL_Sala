@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="salabeauty" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-HVBQUF4O\SERVER;Initial Catalog=salabeauty;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="salabeautyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms">
+    <Type Name="admin_AccessGroupUserForm">
+      <Column Name="guf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="guf_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_Form_admin_AccessGroupUserForm" Member="admin_Form" ThisKey="form_id" OtherKey="form_id" Type="admin_Form" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserForm" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbThongBaoTuQuanTri" Member="tbThongBaoTuQuanTris">
+    <Type Name="tbThongBaoTuQuanTri">
+      <Column Name="thongbao_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongbao_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongbao_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tbThongBaoTuQuanTri" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules">
+    <Type Name="admin_AccessGroupUserModule">
+      <Column Name="gum_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gum_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserModule" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_Module_admin_AccessGroupUserModule" Member="admin_Module" ThisKey="module_id" OtherKey="module_id" Type="admin_Module" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_AccessUserForm" Member="admin_AccessUserForms">
+    <Type Name="admin_AccessUserForm">
+      <Column Name="uf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uf_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_Form_admin_AccessUserForm" Member="admin_Form" ThisKey="form_id" OtherKey="form_id" Type="admin_Form" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_User_admin_AccessUserForm" Member="admin_User" ThisKey="username_id" OtherKey="username_id" Type="admin_User" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_Form" Member="admin_Forms">
+    <Type Name="admin_Form">
+      <Column Name="form_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="form_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="form_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="form_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="module_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_Form_admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms" ThisKey="form_id" OtherKey="form_id" Type="admin_AccessGroupUserForm" />
+      <Association Name="admin_Form_admin_AccessUserForm" Member="admin_AccessUserForms" ThisKey="form_id" OtherKey="form_id" Type="admin_AccessUserForm" />
+      <Association Name="admin_Module_admin_Form" Member="admin_Module" ThisKey="module_id" OtherKey="module_id" Type="admin_Module" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_GroupUser" Member="admin_GroupUsers">
+    <Type Name="admin_GroupUser">
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="groupuser_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupuser_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_AccessGroupUserForm" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_AccessGroupUserModule" />
+      <Association Name="admin_GroupUser_admin_User" Member="admin_Users" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_Module" Member="admin_Modules">
+    <Type Name="admin_Module">
+      <Column Name="module_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="module_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="module_icon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="module_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_Module_admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules" ThisKey="module_id" OtherKey="module_id" Type="admin_AccessGroupUserModule" />
+      <Association Name="admin_Module_admin_Form" Member="admin_Forms" ThisKey="module_id" OtherKey="module_id" Type="admin_Form" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_User" Member="admin_Users">
+    <Type Name="admin_User">
+      <Column Name="username_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username_username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_fullname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="username_phone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="admin_User_admin_AccessUserForm" Member="admin_AccessUserForms" ThisKey="username_id" OtherKey="username_id" Type="admin_AccessUserForm" />
+      <Association Name="admin_User_tb_DichVuGiaoDich" Member="tb_DichVuGiaoDiches" ThisKey="username_id" OtherKey="username_id" Type="tb_DichVuGiaoDich" />
+      <Association Name="admin_User_tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGiaCuaKhachHangs" ThisKey="username_id" OtherKey="username_id" Type="tb_MaGiamGiaCuaKhachHang" />
+      <Association Name="admin_GroupUser_admin_User" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" />
+      <Association Name="tb_ThongTinChiNhanh_admin_User" Member="tb_ThongTinChiNhanh" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="tb_ThongTinChiNhanh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ChiaSe" Member="tb_ChiaSes">
+    <Type Name="tb_ChiaSe">
+      <Column Name="chiase_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="chiase_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tb_ChiaSe" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DanhGia" Member="tb_DanhGias">
+    <Type Name="tb_DanhGia">
+      <Column Name="danhgia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dichvu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_DanhGia_tb_DanhGiaChiTiet" Member="tb_DanhGiaChiTiets" ThisKey="danhgia_id" OtherKey="danhgia_id" Type="tb_DanhGiaChiTiet" />
+      <Association Name="tb_DichVuGiaoDich_tb_DanhGia" Member="tb_DichVuGiaoDich" ThisKey="dichvu_id" OtherKey="dvGiaoDich_id" Type="tb_DichVuGiaoDich" IsForeignKey="true" />
+      <Association Name="tb_KhachHang_tb_DanhGia" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DanhGiaChiTiet" Member="tb_DanhGiaChiTiets">
+    <Type Name="tb_DanhGiaChiTiet">
+      <Column Name="danhgiachitiet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="danhgiachitiet_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgiachitiet_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgiachitiet_binhchon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgia_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="danhgiachitiet_ngaylap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="danhgiachitiet_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_DanhGia_tb_DanhGiaChiTiet" Member="tb_DanhGia" ThisKey="danhgia_id" OtherKey="danhgia_id" Type="tb_DanhGia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DichVuGiaoDich" Member="tb_DichVuGiaoDiches">
+    <Type Name="tb_DichVuGiaoDich">
+      <Column Name="dvGiaoDich_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dvGiaoDich_trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dvGiaoDich_ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dvGiaoDich_gio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_slKhach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dvGiaoDich_capnhatgia" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dvGiaoDich_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_giatien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_tongtien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dv_tuchon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="luutam_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="luuSpAdminId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_DichVuGiaoDich_tb_DanhGia" Member="tb_DanhGias" ThisKey="dvGiaoDich_id" OtherKey="dichvu_id" Type="tb_DanhGia" />
+      <Association Name="admin_User_tb_DichVuGiaoDich" Member="admin_User" ThisKey="username_id" OtherKey="username_id" Type="admin_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DonHangGiaoDich" Member="tb_DonHangGiaoDiches">
+    <Type Name="tb_DonHangGiaoDich">
+      <Column Name="dhgd_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dhgd_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="luunbAdmin_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Heart" Member="tb_Hearts">
+    <Type Name="tb_Heart">
+      <Column Name="heart_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tb_Heart" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+      <Association Name="tb_SanPham_tb_Heart" Member="tb_SanPham" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDon" Member="tb_HoaDons">
+    <Type Name="tb_HoaDon">
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoadon_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_createdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hoadon_giovao" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_soluongkhachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_magiamgia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_tongtien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="hoadon_diachigiaohang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_sodienthoaikhachhang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_hidden" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadontam_LoaiThanhToan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_TenKhachHang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_imageThanhToan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_phaitra" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_tinhtrang_bill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_HoaDon_tb_HoaDon_HinhAnhChuyenKhoan" Member="tb_HoaDon_HinhAnhChuyenKhoans" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tb_HoaDon_HinhAnhChuyenKhoan" />
+      <Association Name="tb_HoaDon_tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tb_HoaDonChiTiet" />
+      <Association Name="tb_KhachHang_tb_HoaDon" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDon_HinhAnhChuyenKhoan" Member="tb_HoaDon_HinhAnhChuyenKhoans">
+    <Type Name="tb_HoaDon_HinhAnhChuyenKhoan">
+      <Column Name="hinhanh_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hinhanh_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_HoaDon_tb_HoaDon_HinhAnhChuyenKhoan" Member="tb_HoaDon" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tb_HoaDon" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets">
+    <Type Name="tb_HoaDonChiTiet">
+      <Column Name="hoadonchitiet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiet_soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiet_dongia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiet_thanhtien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiettam_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadonchitiettam_noidungchonmaukhachhang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadonchitiet_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_HoaDon_tb_HoaDonChiTiet" Member="tb_HoaDon" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tb_HoaDon" IsForeignKey="true" />
+      <Association Name="tb_SanPham_tb_HoaDonChiTiet" Member="tb_SanPham" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HomThuGopY" Member="tb_HomThuGopies">
+    <Type Name="tb_HomThuGopY">
+      <Column Name="homthugopy_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="homthugopy_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="homthugopy_loai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tb_HomThuGopY" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_KhachHang" Member="tb_KhachHangs">
+    <Type Name="tb_KhachHang">
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="khachhang_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_gmail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_ngaysinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="khachhang_sodienthoai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="khachhang_username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="khachhang_avatar" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_diachi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_hang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tbThongBaoTuQuanTri" Member="tbThongBaoTuQuanTris" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tbThongBaoTuQuanTri" />
+      <Association Name="tb_KhachHang_tb_ChiaSe" Member="tb_ChiaSes" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_ChiaSe" />
+      <Association Name="tb_KhachHang_tb_DanhGia" Member="tb_DanhGias" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_DanhGia" />
+      <Association Name="tb_KhachHang_tb_Heart" Member="tb_Hearts" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_Heart" />
+      <Association Name="tb_KhachHang_tb_HoaDon" Member="tb_HoaDons" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_HoaDon" />
+      <Association Name="tb_KhachHang_tb_HomThuGopY" Member="tb_HomThuGopies" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_HomThuGopY" />
+      <Association Name="tb_KhachHang_tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGiaCuaKhachHangs" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_MaGiamGiaCuaKhachHang" />
+      <Association Name="tb_ThongTinChiNhanh_tb_KhachHang" Member="tb_ThongTinChiNhanh" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="tb_ThongTinChiNhanh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_LoaiMaGiamGia" Member="tb_LoaiMaGiamGias">
+    <Type Name="tb_LoaiMaGiamGia">
+      <Column Name="loaimagiamgia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="loaimagiamgia_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_LoaiMaGiamGia_tb_MaGiamGia" Member="tb_MaGiamGias" ThisKey="loaimagiamgia_id" OtherKey="loaigiamgia_id" Type="tb_MaGiamGia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_LoaiSanPham" Member="tb_LoaiSanPhams">
+    <Type Name="tb_LoaiSanPham">
+      <Column Name="loaisanpham_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="loaisanpham_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="loaisanpham_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="loaisanpham_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_parent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_LoaiSanPham_tb_SanPham" Member="tb_SanPhams" ThisKey="loaisanpham_id" OtherKey="loaisanpham_id" Type="tb_SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_MaGiamGia" Member="tb_MaGiamGias">
+    <Type Name="tb_MaGiamGia">
+      <Column Name="magiamgia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="magiamgia_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_color" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="magiamgia_ngaybatdau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="magiamgia_ngayketthuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="magiamgia_sogiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="magiamgia_hiden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="magiamgia_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_owned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="magiamgia_khachhangid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loaigiamgia_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_MaGiamGia_tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGiaCuaKhachHangs" ThisKey="magiamgia_id" OtherKey="magiamgia_id" Type="tb_MaGiamGiaCuaKhachHang" />
+      <Association Name="tb_LoaiMaGiamGia_tb_MaGiamGia" Member="tb_LoaiMaGiamGia" ThisKey="loaigiamgia_id" OtherKey="loaimagiamgia_id" Type="tb_LoaiMaGiamGia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGiaCuaKhachHangs">
+    <Type Name="tb_MaGiamGiaCuaKhachHang">
+      <Column Name="magiamgiacuakhachhang_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="magiamgia_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="magiagiacuakhachhanghang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_KhachHang_tb_MaGiamGiaCuaKhachHang" Member="tb_KhachHang" ThisKey="khachhang_id" OtherKey="khachhang_id" Type="tb_KhachHang" IsForeignKey="true" />
+      <Association Name="tb_MaGiamGia_tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGia" ThisKey="magiamgia_id" OtherKey="magiamgia_id" Type="tb_MaGiamGia" IsForeignKey="true" />
+      <Association Name="admin_User_tb_MaGiamGiaCuaKhachHang" Member="admin_User" ThisKey="username_id" OtherKey="username_id" Type="admin_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_News" Member="tb_News">
+    <Type Name="tb_New">
+      <Column Name="news_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="news_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_datecreate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="news_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="newscate_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_NewsCate_tb_New" Member="tb_NewsCate" ThisKey="newscate_id" OtherKey="newscate_id" Type="tb_NewsCate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_NewsCate" Member="tb_NewsCates">
+    <Type Name="tb_NewsCate">
+      <Column Name="newscate_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="newscate_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="newscate_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="newscate_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_NewsCate_tb_New" Member="tb_News" ThisKey="newscate_id" OtherKey="newscate_id" Type="tb_New" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_QuanLySlide" Member="tb_QuanLySlides">
+    <Type Name="tb_QuanLySlide">
+      <Column Name="slide_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slide_create" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="slide_img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="slide_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_SanPham" Member="tb_SanPhams">
+    <Type Name="tb_SanPham">
+      <Column Name="sanpham_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sanpham_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_news" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_giatien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loaisanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sanpham_new" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sanpham_representative" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sanpham_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_parent" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sanpham_luotmua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_SanPham_tb_Heart" Member="tb_Hearts" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_Heart" />
+      <Association Name="tb_SanPham_tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_HoaDonChiTiet" />
+      <Association Name="tb_LoaiSanPham_tb_SanPham" Member="tb_LoaiSanPham" ThisKey="loaisanpham_id" OtherKey="loaisanpham_id" Type="tb_LoaiSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Slide" Member="tb_Slides">
+    <Type Name="tb_Slide">
+      <Column Name="slide_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slide_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ThongTinChiNhanh" Member="tb_ThongTinChiNhanhs">
+    <Type Name="tb_ThongTinChiNhanh">
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongtinchinhanh_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_sodiemthoai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_diachi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_gioithieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_ThongTinChiNhanh_admin_User" Member="admin_Users" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="admin_User" />
+      <Association Name="tb_ThongTinChiNhanh_tb_KhachHang" Member="tb_KhachHangs" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="tb_KhachHang" />
+      <Association Name="tb_ThongTinChiNhanh_tb_ThongTinChiNhanhImage" Member="tb_ThongTinChiNhanhImages" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="tb_ThongTinChiNhanhImage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ThongTinChiNhanhImage" Member="tb_ThongTinChiNhanhImages">
+    <Type Name="tb_ThongTinChiNhanhImage">
+      <Column Name="thongtinchinhanhimage_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongtinchinhanhimage_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="tb_ThongTinChiNhanh_tb_ThongTinChiNhanhImage" Member="tb_ThongTinChiNhanh" ThisKey="thongtinchinhanh_id" OtherKey="thongtinchinhanh_id" Type="tb_ThongTinChiNhanh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ThongTinLienHe" Member="tb_ThongTinLienHes">
+    <Type Name="tb_ThongTinLienHe">
+      <Column Name="thongtinlienhe_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongtinlienhe_facebook" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_zalo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_instargram" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_sodienthoai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_diachi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_youtube" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_gmail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinlienhe_website" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
