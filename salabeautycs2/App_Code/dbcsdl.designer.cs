@@ -21,7 +21,7 @@ using System.Reflection;
 
 
 
-[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="salabeauty")]
+[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="salabeauty2")]
 public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 {
 	
@@ -125,7 +125,7 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public dbcsdlDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeautyConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeauty2ConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
