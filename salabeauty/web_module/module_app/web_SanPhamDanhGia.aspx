@@ -56,7 +56,7 @@
         }
     </style>
     <div class="navabar">
-        <a href="Default.aspx"><i style="font-size: 41px" class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i style="font-size: 41px" class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span style="margin-left: 9%;">SẢN PHẨM</span></div>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader" />

@@ -12,14 +12,21 @@ public partial class WebSiteMasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         cls_KhachHang cls = new cls_KhachHang();
-        if (cls.Check_KhachHang(Request.Cookies["phone"].Value))
-        {
-            if (!IsPostBack)
-                loadData();
-        }
-        else
+
+        // Response.Redirect("/app-login");
+
+        if (!cls.Check_KhachHang(Request.Cookies["phone"].Value))
         {
             Response.Redirect("/app-login");
+
+        }
+
+
+
+        else
+        {
+            if (!IsPostBack)
+            loadData();
         }
     }
     protected void loadData()

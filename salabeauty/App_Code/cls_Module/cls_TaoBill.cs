@@ -43,7 +43,7 @@ public class cls_TaoBill
                 insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
                 insertCT.hoadonchitiet_soluong = 1;
                 insertCT.hoadonchitiet_thanhtien = insertCT.hoadonchitiet_dongia * insertCT.hoadonchitiet_soluong;
-                // insert.rowguid = System.Guid.NewGuid();
+                insertCT.rowguid = System.Guid.NewGuid();
                 db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
                 db.SubmitChanges();
                 return true;

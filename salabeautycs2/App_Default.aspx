@@ -138,7 +138,7 @@
         }
     </style>
     <div class="navabar">
-        <span style="margin-left: 26%; margin-top: 19px;"><span style="font-family: 'Great Vibes'; font-size: 75px;">Sala</span><span style="margin-left: 25px; font-size: 42px;">NAILS & BEAUTY</span></span>
+        <span style="margin-left: 26%; margin-top: 19px;"><span style="font-family: 'Great Vibes'; font-size: 75px;">Sala CLient2</span><span style="margin-left: 25px; font-size: 42px;">NAILS & BEAUTY</span></span>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader1" />
         </div>
@@ -200,7 +200,7 @@
                 </a>
             </div>
             <div class="title-chinh">
-                <div class="ten">DỊCH VỤ TẠI SALA</div>
+                <div class="ten">DỊCH VỤ TẠI SALA CO SO 2</div>
             </div>
             <div class="block-chinh2">
                 <div class="row">

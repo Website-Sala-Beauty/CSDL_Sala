@@ -21,7 +21,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="navabar">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>GIỎ HÀNG</span></div>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader1" />

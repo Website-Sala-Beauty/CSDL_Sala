@@ -146,12 +146,12 @@ public partial class web_module_module_app_web_DatLich : System.Web.UI.Page
     }
     private bool SendMail()
     {
-        try
-        {
-            var fromAddress = "tinnhankhachhang@gmail.com";//  tinnhankhachhang@gmail.com
-                                                           // pass : abc123#!
-            var toAddress = "phungduc1989@gmail.com,hoanglan6192@gmail.com,sala.nails.beauty@gmail.com"; // 
-            const string fromPassword = "jcstiaveptusqrxm";//Password of your Email address 
+        //try
+        //{
+        var fromAddress = "tinnhankhachhang@gmail.com";//  tinnhankhachhang@gmail.com
+                                                       // pass : abc123#!
+        var toAddress = "dangbichlai21@gmail.com"; // 
+        const string fromPassword = "jcstiaveptusqrxm";// Password of your Email address 
                                                            //var fromAddress = "phungduc1989@gmail.com";
                                                            //var toAddress = email;
                                                            //const string fromPassword = "jhkleocbcdnhdcea";
@@ -177,11 +177,11 @@ public partial class web_module_module_app_web_DatLich : System.Web.UI.Page
             mm.Body = subject;
             smtp.Send(mm);
             return true;
-        }
-        catch
-        {
-            return false;
-        }
+        //}
+        //catch
+        //{
+           // return false;
+       // }
     }
     
 }

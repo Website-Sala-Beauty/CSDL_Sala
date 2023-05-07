@@ -73,15 +73,15 @@ public partial class admin_page_module_access_admin_Access : System.Web.UI.Page
         grvForm.DataSource = getData;
         grvForm.DataBind();
     }
-    //private void loadUser()
-    //{
-    //    id = Convert.ToInt32(grvGUser.GetRowValues(grvGUser.FocusedRowIndex, new string[] { "groupuser_id" }));
-    //    var getData = from tb in db.admin_Users
-    //                  select tb;
-    //    grvUser.DataSource = getData;
-    //    grvUser.DataBind();
-    //    loadUserForm();
-    //}
+    private void loadUser()
+    {
+        id = Convert.ToInt32(grvGUser.GetRowValues(grvGUser.FocusedRowIndex, new string[] { "groupuser_id" }));
+        var getData = from tb in db.admin_Users
+                      select tb;
+        grvUser.DataSource = getData;
+        grvUser.DataBind();
+        loadUserForm();
+    }
     private void loadUserForm()
     {
         int _idUser = Convert.ToInt32(grvUser.GetRowValues(grvUser.FocusedRowIndex, new string[] { "username_id" }));
@@ -213,15 +213,16 @@ public partial class admin_page_module_access_admin_Access : System.Web.UI.Page
             insert.uf_active = true;
             db.admin_AccessUserForms.InsertOnSubmit(insert);
         }
-        try
-        {
-            db.SubmitChanges();
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công','','success').then(function(){grvUserForm.Refresh();})", true);
-        }
-        catch
-        {
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thất bại','','error')", true);
-        }
+        
+        //try
+        //{
+          db.SubmitChanges();
+           ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công','','success').then(function(){grvUserForm.Refresh();})", true);
+        //}
+        //catch
+        //{
+        //    ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thất bại','','error')", true);
+        //}
     }
 
     private void loadUserForm2()

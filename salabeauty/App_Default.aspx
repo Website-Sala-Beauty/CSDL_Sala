@@ -200,7 +200,7 @@
                 </a>
             </div>
             <div class="title-chinh">
-                <div class="ten">DỊCH VỤ TẠI SALA</div>
+                <div class="ten">DỊCH VỤ TẠI SALA SERVER</div>
             </div>
             <div class="block-chinh2">
                 <div class="row">

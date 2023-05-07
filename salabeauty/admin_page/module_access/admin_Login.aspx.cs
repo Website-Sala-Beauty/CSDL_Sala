@@ -25,11 +25,12 @@ public partial class admin_page_module_access_admin_Login : System.Web.UI.Page
     protected void btnLogin_ServerClick(object sender, EventArgs e)
     {
         cls_security md5 = new cls_security();
-        string passmd5 = md5.HashCode(txtPassword.Value);
+        //string passmd5 = md5.HashCode(txtPassword.Value);
+        string password = txtPassword.Value;
         string userName = txtUser.Value.Trim();
         var viewUserName = from tb in db.admin_Users
-                           where tb.username_username == userName.ToLower() 
-                           && tb.username_password == passmd5 
+                           where tb.username_username == userName.ToLower()
+                           && tb.username_password == password 
                            && tb.username_active == true
                            select tb;
 

@@ -46,7 +46,7 @@
 <footer>
     <div class="footer-phone">
         <div class="tab-nav-container">
-            <a href="Default.aspx" class="tab">
+            <a href="/trang-chu" class="tab">
                 <img src="App_image/footer/sala.png" style="width: 221px; margin-top: -78px;" />
                 <p>Trang chủ</p>
             </a>
