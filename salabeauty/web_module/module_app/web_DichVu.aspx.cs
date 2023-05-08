@@ -11,12 +11,17 @@ public partial class web_module_module_app_web_DichVu : System.Web.UI.Page
     //cls_Alert alert = new cls_Alert();
     protected void Page_Load(object sender, EventArgs e)
     {
-        cls_KhachHang cls = new cls_KhachHang();
-        if (cls.Check_KhachHang(Request.Cookies["phone"].Value))
+        try
         {
-            loadData();
+
+
+            if (Request.Cookies["phone"].Value != null)
+            {
+                if (!IsPostBack)
+                    loadData();
+            }
         }
-        else
+        catch (NullReferenceException)
         {
             Response.Redirect("/app-login");
         }

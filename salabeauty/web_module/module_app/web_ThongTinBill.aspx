@@ -4,6 +4,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../css_Lai/css_DatLich2.css" rel="stylesheet" />
     <link href="../../css/footer.css" rel="stylesheet" />
+      <style>
+        .container_footer {
+    display: flex;
+    width: 100%;
+    height: 246px;
+    line-height: 114px;
+    background-color: #ffffff;
+    margin: 40px 0px;
+    font-size: 47px;
+    font-weight: bolder;
+    padding: 10px 30px;
+    color: black;
+    box-shadow: 5px 5px 2px 2px #dcd7d7;
+    flex-direction: column;
+}
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="navabar">
