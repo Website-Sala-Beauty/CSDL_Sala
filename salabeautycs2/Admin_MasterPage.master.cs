@@ -11,14 +11,18 @@ public partial class Admin_MasterPage : System.Web.UI.MasterPage
     public string adminName, count;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Cookies["UserName"] != null)
+         try
         {
-            adminName = Request.Cookies["UserName"].Value;
-            loadMenu();
+            cls_KhachHang cls = new cls_KhachHang();
+            if (cls.Check_KhachHang(Request.Cookies["phone"].Value))
+            {
+                if (!IsPostBack)
+                    loadMenu();
+            }
         }
-        else
+        catch(NullReferenceException)
         {
-            Response.Redirect("/admin-login");
+            Response.Redirect("/app-login");
         }
         //ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "alert('" + HttpContext.Current.Request.RawUrl.ToString() + "');", true);
     }

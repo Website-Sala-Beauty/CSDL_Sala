@@ -11,13 +11,16 @@ public partial class WebSiteMasterPage : System.Web.UI.MasterPage
     public string count_datlich, count_giohang, count_traitim;
     protected void Page_Load(object sender, EventArgs e)
     {
-        cls_KhachHang cls = new cls_KhachHang();
-        if (cls.Check_KhachHang(Request.Cookies["phone"].Value))
+        try
         {
-            if (!IsPostBack)
-                loadData();
+            cls_KhachHang cls = new cls_KhachHang();
+            if (cls.Check_KhachHang(Request.Cookies["phone"].Value))
+            {
+                if (!IsPostBack)
+                    loadData();
+            }
         }
-        else
+        catch(NullReferenceException)
         {
             Response.Redirect("/app-login");
         }

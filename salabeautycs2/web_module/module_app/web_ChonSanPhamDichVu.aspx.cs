@@ -12,7 +12,7 @@ public partial class web_module_module_app_web_ChonSanPham : System.Web.UI.Page
     cls_Alert alert = new cls_Alert();
     string image;
     // Sản phẩm tự chọn
-    int sanphamtuchon = 144;
+    int sanphamtuchon = 15;
     protected void Page_Load(object sender, EventArgs e)
     {
         cls_KhachHang cls = new cls_KhachHang();
@@ -65,6 +65,7 @@ public partial class web_module_module_app_web_ChonSanPham : System.Web.UI.Page
                     insertCT.hoadonchitiettam_noidungchonmaukhachhang = txtTenMau.Value;
                     insertCT.hoadonchitiet_dongia = Convert.ToInt32(txtGiaTien.Value);
                     insertCT.hoadonchitiet_soluong = 1;
+                    insertCT.rowguid = System.Guid.NewGuid();
                     db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
                     db.SubmitChanges();
                     alert.alert_Success(Page, "Đã lưu vào đặt lịch", "");
@@ -79,6 +80,8 @@ public partial class web_module_module_app_web_ChonSanPham : System.Web.UI.Page
                 insert.hoadon_hidden = "Tạo đặt lịch";
                 insert.hoadontam_LoaiThanhToan = "Đặt lịch";
                 insert.hoadon_tinhtrang = "Order";
+                insert.rowguid = System.Guid.NewGuid();
+
                 db.tb_HoaDons.InsertOnSubmit(insert);
                 db.SubmitChanges();
                 tb_HoaDonChiTiet insertCT = new tb_HoaDonChiTiet();

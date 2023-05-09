@@ -10,7 +10,7 @@ public partial class web_module_module_app_web_MenuDichVu : System.Web.UI.Page
     dbcsdlDataContext db = new dbcsdlDataContext();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(  Request.Cookies["phone"].Value == null)
+        if (Request.Cookies["phone"].Value == null)
         {
             Response.Redirect("/app-login");
         }
@@ -19,10 +19,11 @@ public partial class web_module_module_app_web_MenuDichVu : System.Web.UI.Page
             loadData();
         }
     }
+
     protected void loadData()
     {
         var getData = from ldv in db.tb_LoaiSanPhams
-                      where ldv.sanpham_parent=="dichvu"
+                      where ldv.sanpham_parent == "dichvu"
                       select ldv;
         rpNhomDichVu.DataSource = getData;
         rpNhomDichVu.DataBind();

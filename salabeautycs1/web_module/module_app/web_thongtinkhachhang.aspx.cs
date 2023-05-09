@@ -11,9 +11,13 @@ public partial class web_module_module_app_web_thongtinkhachhang : System.Web.UI
     protected void Page_Load(object sender, EventArgs e)
     {
         
-        if (Request.Cookies["phone"]!= null)
+        if (Request.Cookies["phone"].Value != null)
         {
-        
+            var checkTaiKhoan = from tk in db.tb_KhachHangs
+                                where tk.khachhang_sodienthoai == Request.Cookies["phone"].Value && tk.hidden == true
+                                select tk;
+            txt_Ten.InnerText = checkTaiKhoan.FirstOrDefault().khachhang_name;
+
         }
         else
         {

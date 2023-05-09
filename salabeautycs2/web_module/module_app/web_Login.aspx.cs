@@ -31,7 +31,7 @@ public partial class web_module_module_app_web_Login : System.Web.UI.Page
             saveCookie();
             if (checkTaiKhoan.FirstOrDefault().hidden == true)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("/trang-chu");
             }
             else
             {

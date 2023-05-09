@@ -42,21 +42,45 @@
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
         }
     </style>
+    <script>
+        // Lấy ngày hiện tại
+        function fucDate() {
+ var today = new Date(); 
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+            var yyyy = today.getFullYear();
+            var minDate = mm + '/' + dd + '/i' + yyyy;
+
+        
+            //tắt ngày bằng cách set giá trị ngày min(ngày bắt đầu)
+            $('#ContentPlaceHolder1_txtNgay').attr('min', minDate);
+        }
+        window.addEventListener('load', function () {
+            var today = new Date().toISOString().split('T')[0];
+
+            // Lấy thẻ input date
+            var inputDate = document.getElementById("ContentPlaceHolder1_txtNgay");
+
+            // Thiết lập giá trị tối thiểu là ngày hiện tại
+            inputDate.setAttribute("min", today); 
+        });
+        
+    </script>
     <div class="navabar">
-        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>ĐẶT LỊCH</span></div>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader1" />
         </div>
     </div>
-    <div class="base">
+    <div class="base" onload ="fucDate() ">
         <div class="container_form">
            
             <div class="table1">
                 <div class="block-menu2">
                     <span>Ngày</span>
                     <span>
-                        <input class="tbdb" type="date" id="txtNgay" runat="server" /></span>
+                        <input class="tbdb" type="date"  id="txtNgay"   runat="server" /></span>
                 </div>
                 <div class="block-menu2">
                     <span>Thời gian</span>

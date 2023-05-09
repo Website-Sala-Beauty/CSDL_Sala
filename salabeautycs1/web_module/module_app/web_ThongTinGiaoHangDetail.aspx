@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <div class="navabar">
-        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>THÊM ĐỊA CHỈ MỚI</span></div>
     </div>
     <div class="base">

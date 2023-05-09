@@ -19,10 +19,10 @@
                     <input runat="server" type="text" id="txt_taikhoan" />--%>
                     <label>Số điện thoại</label>
                     <input type="text" id="txt_SoDienThoai" runat="server" />
-                    <label>Mật khâu</label>
-                    <input type="text" id="txt_MatKhau" runat="server" />
+                     <label>Mật khâu</label>
+                    <input type="password" id="txt_MatKhau" runat="server" />
                     <div class="text_login">
-                         
+
                        <%-- <p>Quên mật khẩu?</p>--%>
                         <a href="/dang-ki">Đăng ký</a>
                     </div>

@@ -14,7 +14,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="navabar" style="position: unset">
-        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>THÔNG TIN KHÁCH HÀNG</span></div>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader" />
@@ -25,7 +25,7 @@
             <div class="header1">
                 <div class="header_add">
                     <img runat="server" id="img_avatar" src="../../App_image/Longin/longin_logo.png" />
-                    <span class="name" runat="server" id="txt_Ten">Nguyễn Thị Linh</span>
+                    <span class="name" runat="server" id="txt_Ten"></span>
                     <div runat="server" class="header_hang" id="div_hang">
                         <span id="txt_Hang" runat="server">Hạng bạc</span>
                     </div>

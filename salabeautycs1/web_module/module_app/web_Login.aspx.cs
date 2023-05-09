@@ -29,7 +29,6 @@ public partial class web_module_module_app_web_Login : System.Web.UI.Page
         if(checkTaiKhoan.Count()>0)
         {
             saveCookie();
-
             if (checkTaiKhoan.FirstOrDefault().hidden == true)
             {
                 Response.Redirect("/trang-chu");
@@ -37,7 +36,7 @@ public partial class web_module_module_app_web_Login : System.Web.UI.Page
             else
             {
                 alert.alert_Error(Page, "Tài khoản của Quý Khách đã bị lock vui lòng liên hệ qua số điện thoại: 0919.698.094 để mở lại!", "");
-            }
+            }    
         }
         else if(txt_SoDienThoai.Value == "")
         {
@@ -45,7 +44,7 @@ public partial class web_module_module_app_web_Login : System.Web.UI.Page
         } 
         else
         {
-            alert.alert_Error(Page, "Số điện thoại hoặc mật khẩu không đúng!", "");
+            alert.alert_Error(Page, "Số điện thoại không đúng!", "");
         }    
         
     }

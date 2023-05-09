@@ -126,7 +126,7 @@
     </style>
     <%--banner--%>
     <div class="navabar">
-        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>MÃ GIẢM GIÁ</span></div>
         <div class="icon-infor">
             <uc1:linqheader runat="server" ID="linqheader" />

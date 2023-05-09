@@ -19,6 +19,7 @@ public partial class web_module_module_app_web_MenuDichVu : System.Web.UI.Page
             loadData();
         }
     }
+
     protected void loadData()
     {
         var getData = from ldv in db.tb_LoaiSanPhams

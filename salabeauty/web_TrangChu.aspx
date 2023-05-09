@@ -228,26 +228,26 @@
                     <img class="pure-material-button-contained" src="App_image/icon/qr-code.jpg" />
                     <span>Mã QR</span>
                 </a>
-                <a href="#<%--/ma-giam-gia--%>" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspx"" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/discounts.jpg" />
 
                     <span>Giảm giá MỚI</span>
                 </a>
-                <a href="/tin-tuc-dich-vu" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/nail.jpg" />
                     <span>Dịch vụ</span>
                 </a>
-                <a href="#<%--/app-cap-nhat-xu-huong--%>" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/diamond.jpg" />
                     <span>Xu hướng</span>
                 </a>
             </div>
             <div class="row">
-                <a href="#" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/69k.png" />
                     <span>Đồng giá 69k</span>
                 </a>
-                <a href="#" class="col-3">
+                <a href="/thong-tin-chi-nhanh" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/living-room.jpg" />
                     <span>chi nhánh</span>
                 </a>
@@ -255,13 +255,13 @@
                     <img class="pure-material-button-contained" src="App_image/icon/clock.jpg" />
                     <span>Thông tin bill</span>
                 </a>
-                <a href="#" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspxs" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/checklist.jpg" />
                     <span>Góp ý</span>
                 </a>
             </div>
             <div class="title-chinh">
-                <div class="ten">DỊCH VỤ TẠI SALA SERVER</div>
+                <div class="ten">DỊCH VỤ TẠI SALA</div>
             </div>
             <div class="block-chinh2">
                 <div class="row">
@@ -280,7 +280,7 @@
                     </a>
                 </div>
                 <div class="row">
-                    <a href="/ma-giam-gia" class="col-4">
+                    <a href="web_module/module_app/web_comingsoon.aspx" class="col-4">
                         <img class="pure-material-button-contained" src="App_image/icon/icon-vocher.jpg" />
                         <span>Mã giảm giá</span>
                     </a>
