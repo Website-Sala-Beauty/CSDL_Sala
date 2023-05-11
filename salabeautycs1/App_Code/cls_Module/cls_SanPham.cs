@@ -23,6 +23,7 @@ public class cls_SanPham
         insert.sanpham_image = sanpham_image;
         insert.loaisanpham_id = loai;
         insert.sanpham_parent = parent;
+        insert.rowguid = System.Guid.NewGuid();
         db.tb_SanPhams.InsertOnSubmit(insert);
         try
         {
@@ -44,6 +45,9 @@ public class cls_SanPham
         insert.sanpham_giatien = giatien;
         insert.sanpham_image = sanpham_image;
         insert.loaisanpham_id = loaisanpham;
+        insert.rowguid = System.Guid.NewGuid();
+
+
         db.tb_SanPhams.InsertOnSubmit(insert);
         try
         {
@@ -64,6 +68,8 @@ public class cls_SanPham
         insert.sanpham_giatien = giatien;
         insert.sanpham_image = sanpham_image;
         insert.loaisanpham_id = loaisanpham;
+        insert.rowguid = System.Guid.NewGuid();
+
         db.tb_SanPhams.InsertOnSubmit(insert);
         try
         {

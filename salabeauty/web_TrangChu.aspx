@@ -255,7 +255,7 @@
                     <img class="pure-material-button-contained" src="App_image/icon/clock.jpg" />
                     <span>Thông tin bill</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspxs" class="col-3">
+                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/checklist.jpg" />
                     <span>Góp ý</span>
                 </a>

@@ -37,7 +37,6 @@ public partial class web_module_module_app_web_DangKi : System.Web.UI.Page
                 insert.khachhang_sodienthoai = txtSoDienThoai.Value;
                 insert.khachhang_gmail = txtEmail.Value;
                 insert.khachhang_password = txtMaGioiThieu.Value;
-                insert.thongtinchinhanh_id = 2;
 
                 //insert.khachhang_password = md5.HashCode(txtMatKhau.Value);
                 insert.hidden = true;

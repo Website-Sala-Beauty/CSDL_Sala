@@ -77,9 +77,9 @@
     </div>
     <div class="block-chuyen">
         <div class="infor-sala">
-            <div>Số tài khoản <span class="infor">040095284797</span></div>
-            <div>Chủ tài khoản <span class="infor">NGUYỄN HOÀNG LAN</span></div>
-            <div>Ngân Hành <span class="infor">Sacombank</span></div>
+            <div>Số tài khoản <span class="infor">0041000391836</span></div>
+            <div>Chủ tài khoản <span class="infor">Huỳnh Quốc Toản</span></div>
+            <div>Ngân Hành <span class="infor">Vietcombank</span></div>
             <div>Mã hóa đơn <span class="infor"><%=MaHoaDon %></span></div>
             <div>Tổng bill <span style="color: red"><%=TienTong %></span></div>
 

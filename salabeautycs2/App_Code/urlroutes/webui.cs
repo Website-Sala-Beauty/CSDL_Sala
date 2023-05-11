@@ -19,7 +19,7 @@ public class webui
         List<string> list = new List<string>();
         
         //salabeauty
-        list.Add("salabeauty|trang-chu|~/App_Default.aspx");
+        list.Add("salabeauty|trang-chu|~/web_TrangChu.aspx");
         list.Add("applogin|app-login|~/web_module/module_app/web_Login.aspx");
         //Xu hướng
         list.Add("capnhatxuhuong|app-cap-nhat-xu-huong|~/web_module/module_app/web_CapNhatXuHuong.aspx");
@@ -30,6 +30,7 @@ public class webui
         list.Add("danhgia|danh-gia|~/web_module/module_app/web_DanhGia.aspx");
         list.Add("homthu|hom-thu|~/web_module/module_app/web_DanhGiaChiTiet.aspx");
         list.Add("sanphamdanhgia|danh-gia-san-pham|~/web_module/module_app/web_SanPhamDanhGia.aspx");
+        list.Add("webtimkiem|tim-kiem-{text}|~/web_module/module_app/web_TimKiem.aspx");
 
         list.Add("hoadondatlich|hoa-don-dat-lich|~/web_module/module_app/web_DatLich.aspx");
         list.Add("chonsanpham|chon-san-pham|~/web_module/module_app/web_ChonSanPhamDichVu.aspx");

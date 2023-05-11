@@ -87,7 +87,7 @@
         </div>
         <div class="block-danhgia">
             <div style="display: flex; justify-content: space-between;">
-                <span style="font-weight: 600; color: #e74960;">Thu Thủy</span>
+                <span style="font-weight: 600; color: #e74960;">Nguyễn Viết Vương</span>
                 <div class="rating-stars">
                     <input type="radio" name="rating" id="rs01"><label for="rs01"></label>
                     <input type="radio" name="rating" id="rs02"><label for="rs02"></label>
@@ -102,7 +102,7 @@
         </div>
         <div class="block-danhgia">
             <div style="display: flex; justify-content: space-between;">
-                <span style="font-weight: 600; color: #e74960;">Nguyễn Lân</span>
+                <span style="font-weight: 600; color: #e74960;">Dương Quốc Nguyên Trường</span>
                 <div class="rating-stars">
                     <input type="radio" name="rating" id="rs001"><label for="rs001"></label>
                     <input type="radio" name="rating" id="rs002"><label for="rs002"></label>
@@ -117,7 +117,7 @@
         </div>
         <div class="block-danhgia">
             <div style="display: flex; justify-content: space-between;">
-                <span style="font-weight: 600; color: #e74960;">Như Ngọc</span>
+                <span style="font-weight: 600; color: #e74960;">Nguyễn Thị An</span>
                 <div class="rating-stars">
                     <input type="radio" name="rating" id="rs0001"><label for="rs0001"></label>
                     <input type="radio" name="rating" id="rs0002"><label for="rs0002"></label>
@@ -129,6 +129,53 @@
             </div>
             <span style="font-size: 28px; margin-top: -7px;">20/2/2022</span>
             <span>Mẫu này oke nè</span>
+        </div>
+        <div class="block-danhgia">
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-weight: 600; color: #e74960;">Trần Đức Thiện</span>
+                <div class="rating-stars">
+                    <input type="radio" name="rating" id="rs0001"><label for="rs0001"></label>
+                    <input type="radio" name="rating" id="rs0002"><label for="rs0002"></label>
+                    <input type="radio" name="rating" id="rs0003"><label for="rs0003"></label>
+                    <input type="radio" name="rating" id="rs0004" checked="checked"><label for="rs0004"></label>
+                    <input type="radio" name="rating" id="rs0005"><label for="rs0005"></label>
+                    <%--<span class="rating-counter"></span>--%>
+                </div>
+            </div>
+            <span style="font-size: 28px; margin-top: -7px;">20/2/2022</span>
+            <span>Xời em làm chỗ này xong. Em thấy móng em đẹp quá trời</span>
+        </div>
+        <div class="block-danhgia">
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-weight: 600; color: #e74960;">Mai Văn Điệp</span>
+                <div class="rating-stars">
+                    <input type="radio" name="rating" id="rs0001"><label for="rs0001"></label>
+                    <input type="radio" name="rating" id="rs0002"><label for="rs0002"></label>
+                    <input type="radio" name="rating" id="rs0003"><label for="rs0003"></label>
+                    <input type="radio" name="rating" id="rs0004" checked="checked"><label for="rs0004"></label>
+                    <input type="radio" name="rating" id="rs0005"><label for="rs0005"></label>
+                    <%--<span class="rating-counter"></span>--%>
+                </div>
+            </div>
+
+            <span style="font-size: 28px; margin-top: -7px;">20/2/2022</span>
+            <span>Không thể chấp nhận được sao shop có thể làm bộ móng đẹp đến như vậy được.</span>
+        </div>
+        <div class="block-danhgia">
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-weight: 600; color: #e74960;">Trần Thị Thanh Phượng</span>
+                <div class="rating-stars">
+                    <input type="radio" name="rating" id="rs0001"><label for="rs0001"></label>
+                    <input type="radio" name="rating" id="rs0002"><label for="rs0002"></label>
+                    <input type="radio" name="rating" id="rs0003"><label for="rs0003"></label>
+                    <input type="radio" name="rating" id="rs0004" checked="checked"><label for="rs0004"></label>
+                    <input type="radio" name="rating" id="rs0005"><label for="rs0005"></label>
+                    <%--<span class="rating-counter"></span>--%>
+                </div>
+            </div>
+
+            <span style="font-size: 28px; margin-top: -7px;">20/2/2022</span>
+            <span>Có cô nhân viên làm móng tên Bích Lài gì đó siêu cute siêu dễ thương luôn.</span>
         </div>
         <a href="/danh-gia" class="block-comment">
             <span>ĐÁNH GIÁ NGAY</span>

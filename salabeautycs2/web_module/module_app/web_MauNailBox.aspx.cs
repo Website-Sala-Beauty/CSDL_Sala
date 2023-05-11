@@ -78,6 +78,8 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
                 insertCT.sanpham_id = Convert.ToInt32(txtIDNailbox.Value);
                 insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
                 insertCT.hoadonchitiet_soluong = 1;
+                insertCT.rowguid = System.Guid.NewGuid();
+
                 db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
                 db.SubmitChanges();
                 alert.alert_Success(Page, "Đã lưu vào giỏ hàng", "");
@@ -97,6 +99,8 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
             insert.hoadon_hidden = "Tạo giỏ hàng";
             insert.hoadontam_LoaiThanhToan = "Giỏ hàng";
             insert.hoadon_tinhtrang = "Order";
+            insert.rowguid = System.Guid.NewGuid();
+
             db.tb_HoaDons.InsertOnSubmit(insert);
             db.SubmitChanges();
             tb_HoaDonChiTiet insertCT = new tb_HoaDonChiTiet();
@@ -105,6 +109,8 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
             insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
             insertCT.hoadonchitiet_soluong = 1;
             db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
+            insertCT.rowguid = System.Guid.NewGuid();
+
             db.SubmitChanges();
             loadData();
         }

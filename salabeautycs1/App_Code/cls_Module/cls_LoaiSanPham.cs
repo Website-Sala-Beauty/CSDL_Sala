@@ -22,6 +22,7 @@ public class cls_LoaiSanPham
         insert.loaisanpham_name = tenloai;
         insert.loaisanpham_image = image;
         insert.sanpham_parent = parent;
+        insert.rowguid = System.Guid.NewGuid();
         db.tb_LoaiSanPhams.InsertOnSubmit(insert);
         try
         {

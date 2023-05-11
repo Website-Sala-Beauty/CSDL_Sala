@@ -49,7 +49,7 @@
         <div class="container_form">
             <div class="submit_rate_form">
                 <div class="iconic">
-                    <p>Hoàng Lan</p>
+                    <p class="name" runat="server" id="txt_Ten"></p>
                 </div>
                 <div class="col-12">
                     <textarea placeholder="Nhập nội dung..." class="input_rate_box"></textarea>
