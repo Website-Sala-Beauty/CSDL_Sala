@@ -24,7 +24,7 @@ public partial class admin_page_module_access_admin_Login : System.Web.UI.Page
     }
     protected void btnLogin_ServerClick(object sender, EventArgs e)
     {
-        cls_security md5 = new cls_security();
+        //cls_security md5 = new cls_security();
         //string passmd5 = md5.HashCode(txtPassword.Value);
         string password = txtPassword.Value;
         string userName = txtUser.Value.Trim();

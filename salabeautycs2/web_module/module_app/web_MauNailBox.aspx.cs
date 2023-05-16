@@ -30,7 +30,7 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
                      select kh).FirstOrDefault();
        // _id = Convert.ToInt32(RouteData.Values["loainailbox-id"]);
         var getData = (from n in db.tb_SanPhams
-                       where n.loaisanpham_id==68028
+                       where n.loaisanpham_id==11
                        orderby n.sanpham_id descending
                        select new
                        {

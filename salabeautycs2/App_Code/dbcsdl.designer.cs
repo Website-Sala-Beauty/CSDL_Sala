@@ -125,7 +125,7 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public dbcsdlDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeauty2ConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeauty2ConnectionString1"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
@@ -4802,8 +4802,6 @@ public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyProperty
 	
 	private EntityRef<tb_HoaDon> _tb_HoaDon;
 	
-	private EntityRef<tb_SanPham> _tb_SanPham;
-	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4833,7 +4831,6 @@ public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyProperty
 	public tb_HoaDonChiTiet()
 	{
 		this._tb_HoaDon = default(EntityRef<tb_HoaDon>);
-		this._tb_SanPham = default(EntityRef<tb_SanPham>);
 		OnCreated();
 	}
 	
@@ -4868,10 +4865,6 @@ public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyProperty
 		{
 			if ((this._sanpham_id != value))
 			{
-				if (this._tb_SanPham.HasLoadedOrAssignedValue)
-				{
-					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-				}
 				this.Onsanpham_idChanging(value);
 				this.SendPropertyChanging();
 				this._sanpham_id = value;
@@ -5075,40 +5068,6 @@ public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyProperty
 					this._hoadon_id = default(Nullable<int>);
 				}
 				this.SendPropertyChanged("tb_HoaDon");
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_SanPham_tb_HoaDonChiTiet", Storage="_tb_SanPham", ThisKey="sanpham_id", OtherKey="sanpham_id", IsForeignKey=true)]
-	public tb_SanPham tb_SanPham
-	{
-		get
-		{
-			return this._tb_SanPham.Entity;
-		}
-		set
-		{
-			tb_SanPham previousValue = this._tb_SanPham.Entity;
-			if (((previousValue != value) 
-						|| (this._tb_SanPham.HasLoadedOrAssignedValue == false)))
-			{
-				this.SendPropertyChanging();
-				if ((previousValue != null))
-				{
-					this._tb_SanPham.Entity = null;
-					previousValue.tb_HoaDonChiTiets.Remove(this);
-				}
-				this._tb_SanPham.Entity = value;
-				if ((value != null))
-				{
-					value.tb_HoaDonChiTiets.Add(this);
-					this._sanpham_id = value.sanpham_id;
-				}
-				else
-				{
-					this._sanpham_id = default(Nullable<int>);
-				}
-				this.SendPropertyChanged("tb_SanPham");
 			}
 		}
 	}
@@ -8131,8 +8090,6 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private EntitySet<tb_Heart> _tb_Hearts;
 	
-	private EntitySet<tb_HoaDonChiTiet> _tb_HoaDonChiTiets;
-	
 	private EntityRef<tb_LoaiSanPham> _tb_LoaiSanPham;
 	
     #region Extensibility Method Definitions
@@ -8180,7 +8137,6 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 	public tb_SanPham()
 	{
 		this._tb_Hearts = new EntitySet<tb_Heart>(new Action<tb_Heart>(this.attach_tb_Hearts), new Action<tb_Heart>(this.detach_tb_Hearts));
-		this._tb_HoaDonChiTiets = new EntitySet<tb_HoaDonChiTiet>(new Action<tb_HoaDonChiTiet>(this.attach_tb_HoaDonChiTiets), new Action<tb_HoaDonChiTiet>(this.detach_tb_HoaDonChiTiets));
 		this._tb_LoaiSanPham = default(EntityRef<tb_LoaiSanPham>);
 		OnCreated();
 	}
@@ -8562,19 +8518,6 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_SanPham_tb_HoaDonChiTiet", Storage="_tb_HoaDonChiTiets", ThisKey="sanpham_id", OtherKey="sanpham_id")]
-	public EntitySet<tb_HoaDonChiTiet> tb_HoaDonChiTiets
-	{
-		get
-		{
-			return this._tb_HoaDonChiTiets;
-		}
-		set
-		{
-			this._tb_HoaDonChiTiets.Assign(value);
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_LoaiSanPham_tb_SanPham", Storage="_tb_LoaiSanPham", ThisKey="loaisanpham_id", OtherKey="loaisanpham_id", IsForeignKey=true)]
 	public tb_LoaiSanPham tb_LoaiSanPham
 	{
@@ -8636,18 +8579,6 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 	}
 	
 	private void detach_tb_Hearts(tb_Heart entity)
-	{
-		this.SendPropertyChanging();
-		entity.tb_SanPham = null;
-	}
-	
-	private void attach_tb_HoaDonChiTiets(tb_HoaDonChiTiet entity)
-	{
-		this.SendPropertyChanging();
-		entity.tb_SanPham = this;
-	}
-	
-	private void detach_tb_HoaDonChiTiets(tb_HoaDonChiTiet entity)
 	{
 		this.SendPropertyChanging();
 		entity.tb_SanPham = null;

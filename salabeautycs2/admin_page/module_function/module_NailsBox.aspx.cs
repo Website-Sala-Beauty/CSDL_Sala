@@ -36,7 +36,7 @@ public partial class admin_page_module_function_module_NailsBox : System.Web.UI.
         // load data đổ vào var danh sách(grv)
         var getData = from nc in db.tb_SanPhams
                       join ln in db.tb_LoaiSanPhams on nc.loaisanpham_id equals ln.loaisanpham_id
-                      where ln.loaisanpham_id==68028
+                      where ln.loaisanpham_id==11
                       orderby nc.sanpham_id descending
                       select new
                       {
@@ -51,7 +51,7 @@ public partial class admin_page_module_function_module_NailsBox : System.Web.UI.
         // đẩy dữ liệu vào gridivew
         grvList.DataSource = getData;
         grvList.DataBind();
-        ddlLoai.DataSource = from l in db.tb_LoaiSanPhams where l.loaisanpham_id==68028 select l;
+        ddlLoai.DataSource = from l in db.tb_LoaiSanPhams where l.loaisanpham_id==11 select l;
         ddlLoai.DataBind();
     }
     private void setNULL()

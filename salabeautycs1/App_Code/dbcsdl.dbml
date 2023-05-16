@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="salabeauty2" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=SalaBeauty\CLIENT1;Initial Catalog=salabeauty2;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="salabeauty2ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-HVBQUF4O\CLIENT1;Initial Catalog=salabeauty2;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="salabeauty2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms">
     <Type Name="admin_AccessGroupUserForm">
       <Column Name="guf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -218,7 +218,6 @@
       <Column Name="hoadonchitiet_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Association Name="tb_HoaDon_tb_HoaDonChiTiet" Member="tb_HoaDon" ThisKey="hoadon_id" OtherKey="hoadon_id" Type="tb_HoaDon" IsForeignKey="true" />
-      <Association Name="tb_SanPham_tb_HoaDonChiTiet" Member="tb_SanPham" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_HomThuGopY" Member="tb_HomThuGopies">
@@ -380,7 +379,6 @@
       <Column Name="sanpham_luotmua" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Association Name="tb_SanPham_tb_Heart" Member="tb_Hearts" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_Heart" />
-      <Association Name="tb_SanPham_tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets" ThisKey="sanpham_id" OtherKey="sanpham_id" Type="tb_HoaDonChiTiet" />
       <Association Name="tb_LoaiSanPham_tb_SanPham" Member="tb_LoaiSanPham" ThisKey="loaisanpham_id" OtherKey="loaisanpham_id" Type="tb_LoaiSanPham" IsForeignKey="true" />
     </Type>
   </Table>
