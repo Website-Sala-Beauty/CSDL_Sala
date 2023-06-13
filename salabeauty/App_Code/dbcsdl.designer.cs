@@ -125,7 +125,7 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public dbcsdlDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeauty2ConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["salabeauty2ConnectionString1"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
