@@ -22,7 +22,7 @@
                 <label>Email</label>
                 <input type="text" id="txtEmail" runat="server" />
                 <label>Mật khẩu</label>
-                <input type="password" id="txtMaGioiThieu" runat="server" />
+                <input type="password" id="txtMatKhau" runat="server" />
                 <asp:Button CssClass="btn_DangNhap" ID="btnDangki" runat="server" OnClick="btnDangki_ServerClick" Text="Đăng kí" />
 
             </div>
