@@ -163,7 +163,7 @@ public partial class web_module_module_app_web_DatLich : System.Web.UI.Page
             string subject, title;
             title = "Có Thông tin order của khách hàng salabeauty";
             subject = "<!DOCTYPE html><html><head><title></title></head><body ><div>" +
-            "<h3 style=\"margin-top:0px; text-align:center; color:#029ada\">Khách hàng Order: <a href='http://salanails.com/admin-hoa-don-thanh-toan'>tại đây.</a></h3>" +
+            "<h3 style=\"margin-top:0px; text-align:center; color:#029ada\">Khách hàng Order: <a href='35.187.247.208/admin-hoa-don-thanh-toan'>tại đây.</a></h3>" +
             "</div></body></html>";
             var smtp = new System.Net.Mail.SmtpClient();
             {

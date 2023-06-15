@@ -105,6 +105,8 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
         insert.thongbao_content = "Đơn hàng đã được xác nhận";
         insert.thongbao_link = "thong-tin-don-hang";
         insert.khachhang_id = update.khachhang_id;
+        insert.rowguid = System.Guid.NewGuid();
+
         db.tbThongBaoTuQuanTris.InsertOnSubmit(insert);
         db.SubmitChanges();
     }
