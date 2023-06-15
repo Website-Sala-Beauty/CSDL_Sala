@@ -2,9 +2,12 @@
 
 <%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v17.1" %>
 
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="headlink" runat="Server">
     <script src="../../../js/jquery-3.3.1.min.js"></script>
     <script src="../../../admin_js/sweetalert.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="hihead" runat="Server">
 </asp:Content>
@@ -41,11 +44,34 @@
         function showImg1_1(img) {
             $('#imgPreview1').attr('src', img);
         }
+        function onLoad() {
+            document.getElementById("img-loading-icon").style.display = 'block';
+        }
+        function HiddenonLoad() {
+            document.getElementById("img-loading-icon").style.display = 'none';
+        }
     </script>
+    <div class="loading" id="img-loading-icon" style="display: none; position: relative">
+        <img class="loading" src="../../../images/Loading_icon.gif" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, 34%);" />
+        <%--<SettingsLoadingPanel Text="Đang tải ..." />--%>
+
+        <%--<div class="loading">Loading&#8230;</div>--%>
+    </div>
     <div class="card card-block">
         <div class="form-group row">
             <div class="col-sm-12">
-                <asp:UpdatePanel ID="udButton" runat="server">
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <a class="btn btn-primary" href="javascript:void(0)" id="btnThem" runat="server" onserverclick="btnThem_ServerClick" onclick=" onLoad()">Thêm</a>
+                        <a class="btn btn-primary" href="javascript:void(0)" id="btnChiTiet" runat="server" onserverclick="btnChiTiet_ServerClick" onclick=" onLoad()">Chi tiết</a>
+                        <a class="btn btn-primary" href="javascript:void(0)" id="btnXacNhan" runat="server" onserverclick="btnXacNhan_ServerClick" onclick=" onLoad()">Xác nhận</a>
+                        <a class="btn btn-primary" href="javascript:void(0)" id="btnPrint" runat="server" onserverclick="btnPrint_ServerClick" onclick=" onLoad()">In bill</a>
+
+
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+
+                <%--<asp:UpdatePanel ID="udButton" runat="server">
                     <ContentTemplate>
                         <div class="col-lg-12">
                             <asp:Button ID="btnThem" runat="server" Text="Thêm" CssClass="btn btn-primary" OnClick="btnThem_Click" />
@@ -57,7 +83,7 @@
                             </div>
                             <asp:Button ID="btnPrint" runat="server" Text="In bill" CssClass="btn btn-primary" OnClick="btnPrint_Click" />
                     </ContentTemplate>
-                </asp:UpdatePanel>
+                </asp:UpdatePanel>--%>
             </div>
         </div>
     </div>
@@ -75,19 +101,19 @@
                 <dx:GridViewDataColumn Caption="Phần trăm giảm giá" FieldName="hoadon_magiamgia" HeaderStyle-HorizontalAlign="Center" Width="9%"></dx:GridViewDataColumn>
                 <dx:GridViewDataColumn Caption="Tổng bill" FieldName="hoadon_tongtien" HeaderStyle-HorizontalAlign="Center" Width="9%">
                     <DataItemTemplate>
-                        <%#Eval("hoadon_tongtien", "{0:N0}") %>
+                        <%--<%#Eval("hoadon_tongtien", "{0:N0}") %>--%>
                     </DataItemTemplate>
                 </dx:GridViewDataColumn>
-                 <dx:GridViewDataColumn Caption="Phải trả" FieldName="hoadon_phaitra" HeaderStyle-HorizontalAlign="Center" Width="9%">
+                <dx:GridViewDataColumn Caption="Phải trả" FieldName="hoadon_phaitra" HeaderStyle-HorizontalAlign="Center" Width="9%">
                     <DataItemTemplate>
-                        <%#Eval("hoadon_phaitra", "{0:N0}") %>
+                        <%--<%#Eval("hoadon_phaitra", "{0:N0}") %>--%>
                     </DataItemTemplate>
                 </dx:GridViewDataColumn>
             </Columns>
             <SettingsSearchPanel Visible="true" />
             <SettingsBehavior AllowFocusedRow="true" />
             <SettingsText EmptyDataRow="Trống" SearchPanelEditorNullText="Gỏ từ cần tìm kiếm và enter..." />
-            <SettingsLoadingPanel Text="Đang tải..." />
+            <SettingsLoadingPanel Text="Đang tải ..." />
             <SettingsPager PageSize="10" Summary-Text="Trang {0} / {1} ({2} trang)"></SettingsPager>
         </dx:ASPxGridView>
     </div>

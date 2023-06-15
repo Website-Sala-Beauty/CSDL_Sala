@@ -96,6 +96,7 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
 
     protected void btnXacNhan_Click(object sender, EventArgs e)
     {
+        alert.alert_Success(Page, "Đã hoàn thành", "");
         _id = Convert.ToInt32(grvList.GetRowValues(grvList.FocusedRowIndex, new string[] { "hoadon_id" }));
         tb_HoaDon update = (from hd in db.tb_HoaDons where hd.hoadon_id == Convert.ToInt32(hd.hoadon_id == _id) select hd).FirstOrDefault();
         update.hoadon_tinhtrang = "Đã hoàn thành";
@@ -109,5 +110,75 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
 
         db.tbThongBaoTuQuanTris.InsertOnSubmit(insert);
         db.SubmitChanges();
+
+        //List<object> selectedKey = grvList.GetSelectedFieldValues(new string[] { "hoadon_id" });
+        //if (selectedKey.Count == 0)
+        //{
+        //    alert.alert_Warning(Page, "Bạn chưa chọn dữ liệu", "");
+        //}
+        //else if (selectedKey.Count > 1)
+        //{
+        //    alert.alert_Warning(Page, "Bạn chỉ được chọn 1 dữ liệu để xác nhận", "");
+        //}
+        //else
+        //{
+        //    tb_HoaDon xacnhan = db.tb_HoaDons.Where(x => x.hoadon_id == Convert.ToInt32(selectedKey[0])).FirstOrDefault();
+        //    if (xacnhan.hoadon_tinhtrang == null)
+        //    {
+        //        xacnhan.hoadon_tinhtrang = "Đã hoàn thành";
+
+        //        db.SubmitChanges();
+        //    }
+        //    ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Xác nhận thành công','','success').then(function(){grvList.UnselectRows();})", true);
+        //    loadata();
+        //}
+    }
+
+    protected void btnXacNhan_ServerClick(object sender, EventArgs e)
+    {
+
+        _id = Convert.ToInt32(grvList.GetRowValues(grvList.FocusedRowIndex, new string[] { "hoadon_id" }));
+        tb_HoaDon update = (from hd in db.tb_HoaDons where hd.hoadon_id == _id select hd).FirstOrDefault();
+        update.hoadon_tinhtrang = "Đã hoàn thành";
+        db.SubmitChanges();
+        alert.alert_Success(Page, "Đã hoàn thành", "");
+        tbThongBaoTuQuanTri insert = new tbThongBaoTuQuanTri();
+        insert.thongbao_content = "Đơn hàng đã được xác nhận";
+        insert.thongbao_link = "thong-tin-don-hang";
+        insert.khachhang_id = update.khachhang_id;
+        insert.rowguid = System.Guid.NewGuid();
+
+        db.tbThongBaoTuQuanTris.InsertOnSubmit(insert);
+        db.SubmitChanges();
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "text", "HiddenonLoad()", true);
+        //loadingIcon.Visible = false;
+        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Xác nhận thành công','','success').then(function(){grvList.UnselectRows();})", true);
+        loadata();
+    }
+
+    protected void btnThem_ServerClick(object sender, EventArgs e)
+    {
+        alert.alert_Success(Page, "Đã hoàn thành", "");
+        //loadingIcon.Visible = false;
+    }
+
+    protected void btnChiTiet_ServerClick(object sender, EventArgs e)
+    {
+        List<object> selectedKey = grvList.GetSelectedFieldValues(new string[] { "hoadon_id" });
+        if (selectedKey.Count > 0)
+        {
+            if (selectedKey.Count == 1)
+                Response.Redirect("/admin-xu-ly-hoa-don-thanh-toan-" + selectedKey[0]);
+            else
+                alert.alert_Warning(Page, "Bạn chỉ được chọn 1 dữ liệu để xem", "");
+        }
+        else
+            alert.alert_Warning(Page, "Bạn chưa chọn dữ liệu", "");
+    }
+
+    protected void btnPrint_ServerClick(object sender, EventArgs e)
+    {
+        _id = Convert.ToInt32(grvList.GetRowValues(grvList.FocusedRowIndex, new string[] { "hoadon_id" }));
+        Response.Redirect("/admin-in-hoa-don-" + _id);
     }
 }
