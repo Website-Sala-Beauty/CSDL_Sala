@@ -247,10 +247,11 @@
     <div class="tab-detail">
         <div class="tab-content" id="myTabContent">
             <%--content tatcadonhang--%>
-            <asp:Repeater ID="rpTatCa" runat="server">
-                <ItemTemplate>
-                    <div class="tab-pane fade active show" id="content-alldonhang"
-                        role="tabpanel" aria-labelledby="tab-alldonhang">
+            <div class="tab-pane fade active show" id="content-alldonhang"
+                role="tabpanel" aria-labelledby="tab-alldonhang">
+                <asp:Repeater ID="rpTatCa" runat="server">
+                    <ItemTemplate>
+
                         <div class="container-fluid">
                             <div class="row content-donhang">
                                 <div class="row donhang-detailban">
@@ -277,16 +278,16 @@
                             </div>
                         </div>
 
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
 
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+            <div class="tab-pane fade" id="content-choxacnhan"
+                role="tabpanel" aria-labelledby="tab-choxacnhan">
+                <%--content cho xac nhan--%>
+                <asp:Repeater ID="rpChoXacNhan" runat="server">
+                    <ItemTemplate>
 
-            <%--content cho xac nhan--%>
-            <asp:Repeater ID="rpChoXacNhan" runat="server">
-                <ItemTemplate>
-                    <div class="tab-pane fade" id="content-choxacnhan"
-                        role="tabpanel" aria-labelledby="tab-choxacnhan">
                         <%--<p class="textdonhang">
                     Chờ xác nhận
                 </p>--%>
@@ -311,14 +312,16 @@
                             </div>
                         </div>
 
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
             <%--content don hoan thanh--%>
-            <asp:Repeater ID="rpDaHoanThanh" runat="server">
-                <ItemTemplate>
-                    <div class="tab-pane fade" id="content-dahoanthanh"
-                        role="tabpanel" aria-labelledby="tab-dahoanthanh">
+            <div class="tab-pane fade" id="content-dahoanthanh"
+                role="tabpanel" aria-labelledby="tab-dahoanthanh">
+                <asp:Repeater ID="rpDaHoanThanh" runat="server">
+                    <ItemTemplate>
+
                         <%--<p class="textdonhang">
                     Đơn đã hoành thành
                 </p>--%>
@@ -343,14 +346,16 @@
                             </div>
                         </div>
 
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
             <%--content da huy --%>
-            <asp:Repeater ID="rpDaHuy" runat="server">
-                <ItemTemplate>
-                    <div class="tab-pane fade" id="content-dahuy"
-                        role="tabpanel" aria-labelledby="tab-dahuy">
+            <div class="tab-pane fade" id="content-dahuy"
+                role="tabpanel" aria-labelledby="tab-dahuy">
+                <asp:Repeater ID="rpDaHuy" runat="server">
+                    <ItemTemplate>
+
                         <%--<p class="textdonhang">
                     Đơn đã huỷ
                 </p>--%>
@@ -374,10 +379,13 @@
                                 <a style="padding: 1%; font-size: 43px; font-weight: 600;" href="/thong-tin-bill-<%#Eval("hoadon_id") %>">chi tiết đơn hàng</a>
                             </div>
                         </div>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
         </div>
+       
     </div>
+    
 </asp:Content>
 
