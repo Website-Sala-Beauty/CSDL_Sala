@@ -172,6 +172,15 @@
             input:focus {
                 outline: 0;
             }
+    input {
+    border: none;
+    width: 88%;
+    font-size: 38px;
+    height: 62px;
+    border-bottom: 1px solid #7A6666;
+    margin: 4% 6% 4% 46px;
+    padding: 5px;
+}
     </style>
     <script>
 
@@ -233,7 +242,7 @@
 
                     <span>Giảm giá MỚI</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/app-coming-soon" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/nail.jpg" />
                     <span>Dịch vụ</span>
                 </a>

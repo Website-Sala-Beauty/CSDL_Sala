@@ -16,13 +16,14 @@
     justify-content: center;
     align-items: center;
 }
+
 .container_login {
     box-shadow: 4px 10px 14px 4px #cd536959;
     position: absolute;
     width: 700px;
     height: 806px;
     left: calc(50% - 700px/2 - 1px);
-    top: 417px;
+    top: 553px;
     background: #FFFFFF;
 }
 

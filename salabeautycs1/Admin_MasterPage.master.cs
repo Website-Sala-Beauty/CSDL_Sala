@@ -57,7 +57,7 @@ public partial class Admin_MasterPage : System.Web.UI.MasterPage
                               open0 = db.admin_Forms.Where(x => "/" + x.form_link == HttpContext.Current.Request.Url.AbsolutePath && x.module_id == tb.module_id).Count() > 0 ? "open" : "",
                               open = db.admin_Forms.Where(x => "/" + x.form_link == HttpContext.Current.Request.Url.AbsolutePath && x.module_id == tb.module_id).Count() > 0 ? "collapse in" : ""
                           };
-            //db.Admin_Forms.FirstOrDefault(x=>x.module_id == tb.module_id).form_link
+          //  db.Admin_Forms.FirstOrDefault(x=>x.module_id == tb.module_id).form_link
             //ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Test", "alert(" + getMenu.FirstOrDefault().open0 + ")", true);
             rpModule.DataSource = getMenu;
             rpModule.DataBind();

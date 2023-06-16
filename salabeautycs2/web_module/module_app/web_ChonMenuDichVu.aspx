@@ -8,6 +8,12 @@
         function myChonDichVu(id) {
             document.getElementById("<%=txtSanPham.ClientID%>").value = id;
             document.getElementById("<%=btnChonSanPham.ClientID%>").click();
+            
+        }
+    </script>
+    <script>
+        function reloadPageAfterPopup() {
+            location.reload();
         }
     </script>
 </asp:Content>

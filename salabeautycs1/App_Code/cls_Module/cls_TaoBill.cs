@@ -42,8 +42,8 @@ public class cls_TaoBill
                 insertCT.sanpham_id = idsanpham;
                 insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
                 insertCT.hoadonchitiet_soluong = 1;
-                insertCT.rowguid = System.Guid.NewGuid();
                 insertCT.hoadonchitiet_thanhtien = insertCT.hoadonchitiet_dongia * insertCT.hoadonchitiet_soluong;
+                insertCT.rowguid = System.Guid.NewGuid();
                 db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
                 db.SubmitChanges();
                 return true;
@@ -69,7 +69,7 @@ public class cls_TaoBill
             insertCT.hoadonchitiet_dongia = checkSanPham.FirstOrDefault().sanpham_giatien;
             insertCT.hoadonchitiet_soluong = 1;
             insertCT.hoadonchitiet_thanhtien = insertCT.hoadonchitiet_dongia * insertCT.hoadonchitiet_soluong;
-            insertCT.rowguid = System.Guid.NewGuid();
+            insert.rowguid = System.Guid.NewGuid();
             db.tb_HoaDonChiTiets.InsertOnSubmit(insertCT);
             db.SubmitChanges();
             return true;

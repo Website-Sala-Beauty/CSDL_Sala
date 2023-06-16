@@ -11,12 +11,12 @@ using System.Web.Routing;
 /// </summary>
 public class cls_routes
 {
-	public cls_routes()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+    public cls_routes()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
     public void RegisterRoutes(RouteCollection routes)
     {
         List<string> listmodule = new List<string> { "adminaccess", "adminbase", "adminmodule", "webui" };

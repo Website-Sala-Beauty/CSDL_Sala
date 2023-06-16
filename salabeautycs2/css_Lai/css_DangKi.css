@@ -37,6 +37,7 @@ input {
     border-bottom: 1px solid #7A6666;
     margin: 0% 15% 10% 15%;
     padding: 5px;
+    font-size: 46px;
 }
 
 label {
@@ -87,13 +88,4 @@ label {
         text-align:center;
         margin-top:-138px;
         margin-left:143px;
-}
-input {
-    border: none;
-    width: 70%;
-    height: 62px;
-    border-bottom: 1px solid #7A6666;
-    margin: 0% 15% 10% 15%;
-    padding: 5px;
-    font-size: 25px;
 }

@@ -168,21 +168,21 @@
                     <img class="pure-material-button-contained" src="App_image/icon/qr-code.jpg" />
                     <span>Mã QR</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/ma-giam-gia" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/discounts.jpg" />
                     <span>Giảm giá MỚI</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/tin-tuc-dich-vu" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/nail.jpg" />
                     <span>Dịch vụ</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/app-cap-nhat-xu-huong" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/diamond.jpg" />
                     <span>Xu hướng</span>
                 </a>
             </div>
             <div class="row">
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/san-pham-dong-gia" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/69k.png" />
                     <span>Đồng giá 69k</span>
                 </a>
@@ -190,17 +190,17 @@
                     <img class="pure-material-button-contained" src="App_image/icon/living-room.jpg" />
                     <span>chi nhánh</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/thong-tin-don-hang" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/clock.jpg" />
                     <span>Thông tin bill</span>
                 </a>
-                <a href="web_module/module_app/web_comingsoon.aspx" class="col-3">
+                <a href="/hom-thu" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/checklist.jpg" />
                     <span>Góp ý</span>
                 </a>
             </div>
             <div class="title-chinh">
-                <div class="ten">DỊCH VỤ TẠI SALA</div>
+                <div class="ten">DỊCH VỤ TẠI SALA SERVER</div>
             </div>
             <div class="block-chinh2">
                 <div class="row">

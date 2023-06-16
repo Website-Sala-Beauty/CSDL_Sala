@@ -21,6 +21,8 @@ public class webui
         //salabeauty
         list.Add("salabeauty|trang-chu|~/web_TrangChu.aspx");
         list.Add("applogin|app-login|~/web_module/module_app/web_Login.aspx");
+        list.Add("comingsoon|app-coming-soon|~/web_module/module_app/web_ComingSoon.aspx");
+        list.Add("quenmatkhau|quen-mat-khau|~/web_module/module_app/web_QuenMatKhauaspx.aspx");
         //Xu hướng
         list.Add("capnhatxuhuong|app-cap-nhat-xu-huong|~/web_module/module_app/web_CapNhatXuHuong.aspx");
         list.Add("webcapnhatxuhuongchitiet|cap-nhat-xu-huong-chi-tiet-{xuhuong-id}|~/web_module/module_app/web_CapNhatXuHuongChiTiet.aspx");
