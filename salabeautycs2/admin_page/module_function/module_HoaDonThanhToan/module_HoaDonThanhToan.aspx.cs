@@ -77,6 +77,7 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
         }
         else
             alert.alert_Warning(Page, "Bạn chưa chọn dữ liệu", "");
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "text", "HiddenonLoad()", true);
     }
     protected void btnLuu_Click(object sender, EventArgs e)
     {
@@ -111,27 +112,7 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
         db.tbThongBaoTuQuanTris.InsertOnSubmit(insert);
         db.SubmitChanges();
 
-        //List<object> selectedKey = grvList.GetSelectedFieldValues(new string[] { "hoadon_id" });
-        //if (selectedKey.Count == 0)
-        //{
-        //    alert.alert_Warning(Page, "Bạn chưa chọn dữ liệu", "");
-        //}
-        //else if (selectedKey.Count > 1)
-        //{
-        //    alert.alert_Warning(Page, "Bạn chỉ được chọn 1 dữ liệu để xác nhận", "");
-        //}
-        //else
-        //{
-        //    tb_HoaDon xacnhan = db.tb_HoaDons.Where(x => x.hoadon_id == Convert.ToInt32(selectedKey[0])).FirstOrDefault();
-        //    if (xacnhan.hoadon_tinhtrang == null)
-        //    {
-        //        xacnhan.hoadon_tinhtrang = "Đã hoàn thành";
-
-        //        db.SubmitChanges();
-        //    }
-        //    ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Xác nhận thành công','','success').then(function(){grvList.UnselectRows();})", true);
-        //    loadata();
-        //}
+     
     }
 
     protected void btnXacNhan_ServerClick(object sender, EventArgs e)
@@ -174,6 +155,7 @@ public partial class admin_page_module_function_module_ThanhToan_module_DatLich_
         }
         else
             alert.alert_Warning(Page, "Bạn chưa chọn dữ liệu", "");
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "text", "HiddenonLoad()", true);
     }
 
     protected void btnPrint_ServerClick(object sender, EventArgs e)
