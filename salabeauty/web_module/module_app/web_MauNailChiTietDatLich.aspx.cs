@@ -54,7 +54,13 @@ public partial class web_module_module_app_web_donggia : System.Web.UI.Page
         cls_TaoBill taoBill = new cls_TaoBill();
         if (taoBill.tao_Bill(Convert.ToInt32(txtSanPham.Value), Request.Cookies["phone"].Value))
         {
-            alert.alert_Success(Page, "Đã lưu vào đặt lịch", "");
+            string script = @"<script>
+                            swal('Đã lưu vào đặt lịch!', '', 'success').then(function() {
+                                window.location.reload();
+                            });
+                        </script>";
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Alert", script, false);
         }
         else
         {
