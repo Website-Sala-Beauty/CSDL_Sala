@@ -30,6 +30,9 @@ public partial class Admin_MasterPage : System.Web.UI.MasterPage
         ck.Expires = DateTime.Now.AddDays(-1);
         Response.Cookies.Add(ck);
         Response.Redirect("/admin-login");
+
+        //Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
+        //Response.Redirect("admin-login");
     }
     protected void rpModule_Init(object sender, EventArgs e)
     {

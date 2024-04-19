@@ -143,7 +143,7 @@ public partial class admin_page_module_function_module_DichVu : System.Web.UI.Pa
             }
             else
             {
-              
+
                 if (cls.Sua_SanPham(Convert.ToInt32(Session["_id"].ToString()), txtTensanpham.Text, txtThongtin.InnerText, Convert.ToInt32(txtGiatien.Value.ToString()), "", Convert.ToInt32(ddlNhom.Value)))
                 {
                     alert.alert_Success(Page, "Cập nhật thành công", "");
