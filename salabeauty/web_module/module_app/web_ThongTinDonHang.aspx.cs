@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class web_module_module_app_abc : System.Web.UI.Page
@@ -38,8 +39,13 @@ public partial class web_module_module_app_abc : System.Web.UI.Page
                                  hdt.hoadon_tinhtrang,
                                  hdt.hoadon_tongtien
                              };
-        rpTatCa.DataSource = getDataDatLich;
-        rpTatCa.DataBind();
+        if (getDataDatLich.Count() > 0)
+        {
+            rpTatCa.DataSource = getDataDatLich;
+            rpTatCa.DataBind();
+        }
+       
+
         var getChoXacNhan = from hdt in db.tb_HoaDons
                             where hdt.khachhang_id == getIDKhachHang.FirstOrDefault().khachhang_id
                             && hdt.hoadon_tinhtrang == "Chờ xác nhận"
@@ -55,7 +61,9 @@ public partial class web_module_module_app_abc : System.Web.UI.Page
         {
             rpChoXacNhan.DataSource = getChoXacNhan;
             rpChoXacNhan.DataBind();
-        }    
+        }
+        
+        
         var getDaHoanThanh = from hdt in db.tb_HoaDons
                             where hdt.khachhang_id == getIDKhachHang.FirstOrDefault().khachhang_id
                             && hdt.hoadon_tinhtrang == "Đã hoàn thành"
@@ -72,6 +80,7 @@ public partial class web_module_module_app_abc : System.Web.UI.Page
             rpDaHoanThanh.DataSource = getDaHoanThanh;
             rpDaHoanThanh.DataBind();
         }
+        
         var getDaHuy = from hdt in db.tb_HoaDons
                              where hdt.khachhang_id == getIDKhachHang.FirstOrDefault().khachhang_id
                              && hdt.hoadon_tinhtrang == "Đã hủy"
@@ -88,6 +97,8 @@ public partial class web_module_module_app_abc : System.Web.UI.Page
             rpDaHuy.DataSource = getDaHuy;
             rpDaHuy.DataBind();
         }
+       
+
         // tongtien = Convert.ToInt32(getDataDatLich.Sum(x => x.thanhtien));
         // TienTong = String.Format("{0:#,0.##} {1}", Convert.ToDouble(tongtien.ToString()), "đ");
     }    

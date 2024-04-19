@@ -68,7 +68,11 @@
                                         <a class="dropdown-item" href="/admin-notification"><i class="fa fa-bell icon"></i>Notifications</a>
                                         <a class="dropdown-item" href="/admin-setting"><i class="fa fa-gear icon"></i>Setting</a>
                                         <div class="dropdown-divider"></div>--%>
+<<<<<<< HEAD
                                         <a id="btnLogout" class="dropdown-item" onserverclick="btnLogout_ServerClick"><i class="fa fa-power-off icon"></i>Logout</a>
+=======
+                                        <a id="btnLogout" runat="server" class="dropdown-item" onserverclick="btnLogout_ServerClick"><i class="fa fa-power-off icon"></i>Logout</a>
+>>>>>>> 756af9bb5460845d210386b6836cd77f34dcd832
                                     </div>
                                 </li>
                             </ul>
